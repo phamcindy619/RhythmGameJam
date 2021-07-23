@@ -1,1 +1,1 @@
-# RhythmGameJam
+# Rhythm Game Jam
