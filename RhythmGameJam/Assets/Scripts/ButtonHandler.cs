@@ -7,6 +7,7 @@ public class ButtonHandler : MonoBehaviour
 {
     public string play;
     public string credits;
+    public string mainmenu;
 
     public void Play() {
         Debug.Log("<color=yellow>"+play+"</color>");
@@ -23,5 +24,10 @@ public class ButtonHandler : MonoBehaviour
     {
         Debug.Log("<color=yellow>Quited</color>");
         Application.Quit();
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(mainmenu);
     }
 }

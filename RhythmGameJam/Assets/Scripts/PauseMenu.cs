@@ -29,7 +29,7 @@ public class PauseMenu : MonoBehaviour
 
             countdowntime--;
         }
-        countdownDisplay.text = "Cook!";
+        countdownDisplay.text = "Go!";
         yield return new WaitForSecondsRealtime(.5f);
         CountdownObject.SetActive(false);
         Time.timeScale = 1;
@@ -40,19 +40,19 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !paused)
         {
+            StopCoroutine("CountDownStart");
+            Time.timeScale = 0;
             paused = true;
             PMenu.SetActive(true);
-            Time.timeScale = 0;
-        }else if(Input.GetKeyDown(KeyCode.Escape) && paused)
-        {
-            paused = false;
-            PMenu.SetActive(false);
-            StartCoroutine(CountDownStart());
+            countdowntime = 3;
         }
     }
 
-    private void FixedUpdate()
+    public void Resume()
     {
-        
+
+        PMenu.SetActive(false);
+        StartCoroutine("CountDownStart");
+        paused = false;
     }
 }
