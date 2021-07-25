@@ -30,24 +30,27 @@ public class Note : MonoBehaviour
         }
 
         // Get input
-        if (Input.GetKeyDown(keyToPress.ToString())) {
+        if (Input.GetKeyDown(keyToPress)) {
             if (canBePressed) {
-                
+                gameObject.SetActive(false);
+
+                GameManager.instance.NoteHit();
             }
         } 
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("enter");
         if (other.tag == "Activator") {
             canBePressed = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        Debug.Log("exit");
         if (other.tag == "Activator") {
             canBePressed = false;
+            gameObject.SetActive(false);
+
+            GameManager.instance.NoteMissed();
         }
     }
 }
