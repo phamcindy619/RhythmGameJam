@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     // Scoreboard
     public int currCombo;
-    public TextMeshProUGUI comboText;
+    public Text comboText;
 
     public int currentScore;
     public int scorePerNote = 10;
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         textHit.enabled = false;
         textMiss.enabled = false;
 
-        //comboText.text = "Combo: 0";
+        comboText.text = "Combo: 0";
     }
 
     // Update is called once per frame
@@ -45,8 +45,8 @@ public class GameManager : MonoBehaviour
     public void NoteHit() {
         Debug.Log("note hit");
 
-        //currCombo++;
-        //comboText.text = "Combo: " + currCombo;
+        currCombo++;
+        comboText.text = "Combo: " + currCombo;
 
         currentScore = currentScore + scorePerNote;
         Debug.Log(currentScore);
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         textHit.enabled = false;
         textMiss.enabled = true;
 
-        //currCombo = 0;
-        //comboText.text = "Combo: 0";
+        currCombo = 0;
+        comboText.text = "Combo: 0";
     }
 }
