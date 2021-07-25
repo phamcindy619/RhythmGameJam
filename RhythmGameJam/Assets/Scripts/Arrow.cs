@@ -41,9 +41,12 @@ public class Arrow : MonoBehaviour
         if (other.tag == "Activator")
         {
             canBePressed = false;
-            gameObject.SetActive(false);
 
-            GameManager.instance.NoteMissed();
+            if (gameObject.activeInHierarchy)
+            {
+                GameManager.instance.NoteMissed();
+                gameObject.SetActive(false);
+            }
         }
     }
 }
