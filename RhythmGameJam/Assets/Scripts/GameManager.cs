@@ -7,12 +7,15 @@ public class GameManager : MonoBehaviour
 {
     public AudioSource song;
     public bool isPlaying;
-    public Note note;
+    public NoteScroller note;
     public static GameManager instance;
 
     // Scoreboard
     public int currCombo;
     public TextMeshProUGUI comboText;
+
+    public int currentScore;
+    public int scorePerNote = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +41,8 @@ public class GameManager : MonoBehaviour
 
         currCombo++;
         comboText.text = "Combo: " + currCombo;
+
+        currentScore = currentScore + scorePerNote;
     }
 
     public void NoteMissed() {
