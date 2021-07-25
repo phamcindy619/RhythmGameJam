@@ -18,11 +18,15 @@ public class GameManager : MonoBehaviour
     public int currentScore;
     public int scorePerNote = 10;
     public Text textScore;
+    public Text textHit;
+    public Text textMiss;
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+        textHit.enabled = false;
+        textMiss.enabled = false;
 
         //comboText.text = "Combo: 0";
     }
@@ -48,10 +52,15 @@ public class GameManager : MonoBehaviour
         Debug.Log(currentScore);
 
         textScore.text = "Score: " + currentScore;
+        textHit.enabled = true;
+        textMiss.enabled = false;
     }
 
     public void NoteMissed() {
         Debug.Log("note missed");
+
+        textHit.enabled = false;
+        textMiss.enabled = true;
 
         //currCombo = 0;
         //comboText.text = "Combo: 0";
