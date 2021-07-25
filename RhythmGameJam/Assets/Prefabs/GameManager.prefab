@@ -46,3 +46,5 @@ MonoBehaviour:
   song: {fileID: 0}
   isPlaying: 0
   note: {fileID: 0}
+  currCombo: 0
+  comboText: {fileID: 0}
