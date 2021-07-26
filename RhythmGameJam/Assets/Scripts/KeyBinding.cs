@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEngine.UI;   
 using UnityEngine;
-
+using UnityEngine.UI;
 public class KeyBinding : MonoBehaviour
 {
 
@@ -20,8 +19,12 @@ public class KeyBinding : MonoBehaviour
         keys.Add("UpKey",(KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("UpKey", "F")));
         keys.Add("DownKey", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("DownKey", "J")));
 
-        UpKey.text = keys["UpKey"].ToString();
-        DownKey.text = keys["DownKey"].ToString();
+        if(UpKey != null)
+        {
+            UpKey.text = keys["UpKey"].ToString();
+            DownKey.text = keys["DownKey"].ToString();
+        }
+
     }
 
     // Update is called once per frame

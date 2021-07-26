@@ -12,7 +12,7 @@ public class Arrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        keybinds = GameObject.Find("KeyBindManager").GetComponent<KeyBinding>();
     }
 
     // Update is called once per frame
