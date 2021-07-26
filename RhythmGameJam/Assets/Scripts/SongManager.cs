@@ -10,12 +10,38 @@ public class SongManager : MonoBehaviour
     public float songPositionInBeats;   // Current song position, in beats
     public float dspSongTime;   // How many seconds have passed since song started
     public AudioSource musicSource;
+    public static SongManager instance = null;  // Singleton SongManager
 
 
     // Start is called before the first frame update
     void Start()
     {
         musicSource = GetComponent<AudioSource>();
+        PlayMusic();
+    }
+
+    void Awake()
+    {
+        // Check if there is another SongManager
+        if (instance == null)
+            instance = this;
+        // Destroy any duplicate
+        else if (instance != this)
+            Destroy(gameObject);
+        
+        // Don't destroy SongManager when reloading the scene
+        DontDestroyOnLoad(gameObject);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // Calculate song position
+        songPositionInSec = (float) (AudioSettings.dspTime - dspSongTime);
+        songPositionInBeats = songPositionInSec / secPerBeat;
+    }
+
+    public void PlayMusic() {
 
         // Calculate number of seconds per beat
         secPerBeat = 60f / songBpm;
@@ -25,13 +51,5 @@ public class SongManager : MonoBehaviour
 
         // Play music
         musicSource.Play();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // Calculate song position
-        songPositionInSec = (float) (AudioSettings.dspTime - dspSongTime);
-        songPositionInBeats = songPositionInSec / secPerBeat;
     }
 }
