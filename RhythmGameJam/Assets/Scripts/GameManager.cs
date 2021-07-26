@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public AudioSource song;
     public bool isPlaying;
     public NoteScroller note;
     public static GameManager instance;
