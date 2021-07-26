@@ -7,7 +7,7 @@ using UnityEngine;
 public class KeyBinding : MonoBehaviour
 {
 
-    private Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
+    public Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
     public TextMeshProUGUI UpKey;
     public TextMeshProUGUI DownKey;
 

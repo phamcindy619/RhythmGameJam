@@ -5,7 +5,9 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     public bool canBePressed;
-    public KeyCode keyToPress;
+    public bool Uplane;
+    [SerializeField]
+    private KeyBinding keybinds;
 
     // Start is called before the first frame update
     void Start()
@@ -17,12 +19,21 @@ public class Arrow : MonoBehaviour
     void Update()
     {
         // Get input
-        if (Input.GetKeyDown(keyToPress))
+        if (Input.GetKeyDown(keybinds.keys["UpKey"]) && Uplane)
         {
             if (canBePressed)
             {
                 gameObject.SetActive(false);
 
+                GameManager.instance.NoteHit();
+            }
+        }
+
+        if (Input.GetKeyDown(keybinds.keys["DownKey"]) && !Uplane)
+        {
+            if (canBePressed)
+            {
+                gameObject.SetActive(false);
                 GameManager.instance.NoteHit();
             }
         }

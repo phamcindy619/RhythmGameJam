@@ -20,7 +20,7 @@ public class ButtonHandler : MonoBehaviour
     bool remapping;
     public void Play() {
         Debug.Log("<color=yellow>"+play+"</color>");
-        //SceneManager.LoadScene(play);
+        SceneManager.LoadScene(play);
     }
 
     public void Update()
