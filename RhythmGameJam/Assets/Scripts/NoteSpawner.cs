@@ -15,20 +15,34 @@ public class NoteSpawner : MonoBehaviour
     public string Pathtocsv = "Assets/Csv/song.csv";
     //public Dictionary<float, System.Tuple<string,string>> NoteTimes = new Dictionary<float, System.Tuple<string,string>>();
 
+    // Note spawner based on beat - Cindy
+    public SongManager sm;
+    float[] notes = {1f, 2f, 3f, 4f, 7f};
+    int nextIndex = 0;
+
+
     void Start()
     {
+        sm = GameObject.Find("SongManager").GetComponent<SongManager>();
     }
 
     void Update()
     {
+        if (ns.hasStarted) {
+            if (nextIndex < notes.Length && notes[nextIndex] < sm.songPositionInBeats) {
+                GameObject n = Instantiate(NoteUplane, UpLane.transform.position, Quaternion.identity);
+                n.transform.parent = notescroller.transform;
 
+                nextIndex++;
+            }
+        }
     }
 
     private void FixedUpdate()
     {
         if (ns.hasStarted)
         {
-            ReadCsvFile(Pathtocsv);
+            //ReadCsvFile(Pathtocsv);
         }
     }
 
