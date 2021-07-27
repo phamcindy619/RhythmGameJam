@@ -9,7 +9,8 @@ public class NoteSpawner : MonoBehaviour
     private NoteScroller ns;
     public Transform UpLane;
     public Transform DownLane;
-    public GameObject note;
+    public GameObject NoteUplane;
+    public GameObject NoteDownLane;
     public GameObject notescroller;
     public string Pathtocsv = "Assets/Csv/song.csv";
     //public Dictionary<float, System.Tuple<string,string>> NoteTimes = new Dictionary<float, System.Tuple<string,string>>();
@@ -19,6 +20,11 @@ public class NoteSpawner : MonoBehaviour
     }
 
     void Update()
+    {
+
+    }
+
+    private void FixedUpdate()
     {
         if (ns.hasStarted)
         {
@@ -47,14 +53,13 @@ public class NoteSpawner : MonoBehaviour
                     if(data_values[2] == "up")
                     {
                         Debug.Log("Normal Note! Up Lane");
-                        GameObject n = Instantiate(note, UpLane.transform.position, Quaternion.identity);
-                        n.transform.parent = notescroller.transform;
+                        CreateNote(true);
+
                     }
                     else if (data_values[2] == "down")
                     {
                         Debug.Log("Normal Note! Down Lane");
-                        GameObject n = Instantiate(note, DownLane.transform.position, Quaternion.identity);
-                        n.transform.parent = notescroller.transform;
+                        CreateNote(false);
                     }
                 }
                 else if(data_values[1] == "special")
@@ -62,6 +67,21 @@ public class NoteSpawner : MonoBehaviour
                     Debug.Log("Special Note!");
                 }
             }
+        }
+    }
+
+    void CreateNote(bool up)
+    {
+        if (up)
+        {
+            GameObject n = Instantiate(NoteUplane, UpLane.transform.position, Quaternion.identity);
+            n.transform.parent = notescroller.transform;
+        }
+        else
+        {
+
+            GameObject n = Instantiate(NoteDownLane, DownLane.transform.position, Quaternion.identity);
+            n.transform.parent = notescroller.transform;
         }
     }
 

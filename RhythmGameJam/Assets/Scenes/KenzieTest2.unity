@@ -279,8 +279,16 @@ PrefabInstance:
       objectReference: {fileID: 2103839996}
     - target: {fileID: 5395330552593412783, guid: ed10b8bbdcfe32d4b902e0f0ac091725, type: 3}
       propertyPath: Pathtocsv
-      value: Assets/Csv/TestSong1.csv
+      value: Assets/Csv/song.csv
       objectReference: {fileID: 0}
+    - target: {fileID: 5395330552593412783, guid: ed10b8bbdcfe32d4b902e0f0ac091725, type: 3}
+      propertyPath: NoteUplane
+      value: 
+      objectReference: {fileID: 3175350911458882310, guid: c22f67dddbf9b2f4b99e550a0cc72a7f, type: 3}
+    - target: {fileID: 5395330552593412783, guid: ed10b8bbdcfe32d4b902e0f0ac091725, type: 3}
+      propertyPath: NoteDownLane
+      value: 
+      objectReference: {fileID: 1289837756917448863, guid: 1be333d6bac385349bf9d5d619d9e6cc, type: 3}
     - target: {fileID: 5395330552593412783, guid: ed10b8bbdcfe32d4b902e0f0ac091725, type: 3}
       propertyPath: notescroller
       value: 
