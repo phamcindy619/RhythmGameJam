@@ -11,7 +11,7 @@ public class NoteCharter : MonoBehaviour
     public TextMeshProUGUI timertxt;
     public float Timer;
     public Dictionary<float, bool> NoteTime = new Dictionary<float, bool>();
-    public string filename;
+    public TMP_InputField filename;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class NoteCharter : MonoBehaviour
         {
             NoteTime.Add(Timer, true);
             print("UpArrow at time: " + Timer.ToString("0.00"));
-            addToCsv(Timer.ToString("0.00"), "normal", "up", "Assets/Csv/"+filename+".csv");
+            addToCsv(Timer.ToString("0.00"), "normal", "up", "Assets/Csv/"+filename.text+".csv");
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {

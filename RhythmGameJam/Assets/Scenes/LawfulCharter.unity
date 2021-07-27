@@ -518,7 +518,7 @@ GameObject:
   - component: {fileID: 566691400}
   - component: {fileID: 566691399}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: Filename Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -792,7 +792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 586c4c117f3614975b9e500f1645b857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUp: 0
+  isUp: 1
   normalButton: {fileID: 21300000, guid: 621440f2b2557470c984c33498666779, type: 3}
   pressedButton: {fileID: 21300000, guid: 2cc9747befff64e2aad0e3b882401480, type: 3}
 --- !u!50 &873531398
@@ -928,7 +928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timertxt: {fileID: 1276140421}
   Timer: 0
-  filename: TestSong1
+  filename: {fileID: 566691399}
 --- !u!1 &1167685951
 GameObject:
   m_ObjectHideFlags: 0
