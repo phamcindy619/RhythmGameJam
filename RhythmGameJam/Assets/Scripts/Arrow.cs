@@ -5,6 +5,7 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     public bool canBePressed;
+    private bool pressed;
     public bool Uplane;
     [SerializeField]
     private KeyBinding keybinds;
@@ -21,20 +22,21 @@ public class Arrow : MonoBehaviour
         // Get input
         if (Input.GetKeyDown(keybinds.keys["UpKey"]) && Uplane)
         {
-            if (canBePressed)
+            if (canBePressed && !pressed)
             {
                 gameObject.SetActive(false);
-
                 GameManager.instance.NoteHit();
+                pressed = true;
             }
         }
 
         if (Input.GetKeyDown(keybinds.keys["DownKey"]) && !Uplane)
         {
-            if (canBePressed)
+            if (canBePressed && !pressed)
             {
                 gameObject.SetActive(false);
                 GameManager.instance.NoteHit();
+                pressed = true;
             }
         }
     }
