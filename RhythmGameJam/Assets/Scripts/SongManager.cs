@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using TMPro;
 using UnityEngine;
 
 public class SongManager : MonoBehaviour
@@ -12,12 +14,12 @@ public class SongManager : MonoBehaviour
     public AudioSource musicSource;
     public static SongManager instance = null;  // Singleton SongManager
 
-
+    bool Paused;
     // Start is called before the first frame update
     void Start()
     {
         musicSource = GetComponent<AudioSource>();
-        PlayMusic();
+        
     }
 
     void Awake()
@@ -37,12 +39,18 @@ public class SongManager : MonoBehaviour
     void Update()
     {
         // Calculate song position
-        songPositionInSec = (float) (AudioSettings.dspTime - dspSongTime);
-        songPositionInBeats = songPositionInSec / secPerBeat;
+        if (!Paused)
+        {
+            songPositionInSec = (float)(AudioSettings.dspTime - dspSongTime);
+            songPositionInBeats = songPositionInSec / secPerBeat;
+        }
+        else
+        {
+        }
     }
 
     public void PlayMusic() {
-
+        Paused = false;
         // Calculate number of seconds per beat
         secPerBeat = 60f / songBpm;
 
@@ -52,4 +60,11 @@ public class SongManager : MonoBehaviour
         // Play music
         musicSource.Play();
     }
+
+    public void PauseMusic()
+    {
+        Paused = true;
+        musicSource.Pause();
+    }
+
 }
