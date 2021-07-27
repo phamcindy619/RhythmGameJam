@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/KenzieTest2.unity
     guid: 518ee1269f0394dedb0e98374ccea5ec
+  - enabled: 1
+    path: Assets/Scenes/LawfulCharter.unity
+    guid: 0e6e410e61914754e85e70c69f49f4ca
   m_configObjects: {}

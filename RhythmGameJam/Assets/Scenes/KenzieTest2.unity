@@ -883,7 +883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 586c4c117f3614975b9e500f1645b857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressedKey: 274
+  isUp: 0
   normalButton: {fileID: 21300000, guid: bbdc82b33a4a34af3b091de5caea10b1, type: 3}
   pressedButton: {fileID: 21300000, guid: 7e6f3a15c5fec42209e5809830fa316f, type: 3}
 --- !u!212 &1348464196
@@ -983,7 +983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 586c4c117f3614975b9e500f1645b857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressedKey: 273
+  isUp: 1
   normalButton: {fileID: 21300000, guid: 621440f2b2557470c984c33498666779, type: 3}
   pressedButton: {fileID: 21300000, guid: 2cc9747befff64e2aad0e3b882401480, type: 3}
 --- !u!50 &1712063272
