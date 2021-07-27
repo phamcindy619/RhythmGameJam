@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public bool isPlaying;
     public NoteScroller note;
-    public static GameManager instance;
+    public static GameManager instance = null;
 
     // Scoreboard
     public int currCombo;
@@ -23,7 +23,20 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
+        
+    }
+
+    void Awake() {
+        // Check if there is another GameManager
+        if (instance == null)
+            instance = this;
+        // Destroy any duplicate
+        else if (instance != this)
+            Destroy(gameObject);
+        
+        // Don't destroy GameManager when reloading the scene
+        DontDestroyOnLoad(gameObject);
+
         textHit.enabled = false;
         textMiss.enabled = false;
 
@@ -37,6 +50,7 @@ public class GameManager : MonoBehaviour
             if (Input.anyKeyDown) {
                 isPlaying = true;
                 note.hasStarted = true;
+                SongManager.instance.PlayMusic();
             }
         }
     }

@@ -19,7 +19,6 @@ public class SongManager : MonoBehaviour
     void Start()
     {
         musicSource = GetComponent<AudioSource>();
-        
     }
 
     void Awake()
