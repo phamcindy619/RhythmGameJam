@@ -1186,14 +1186,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9251e043e583d94db61261bf3ccdd66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 0
+  offset: 1.5
   ns: {fileID: 1874269175}
   UpLane: {fileID: 5395330552666552131}
   DownLane: {fileID: 5395330552823623759}
   NoteUplane: {fileID: 3318223657296998473, guid: ade11344606edc443af9c2d9ab2420bb, type: 3}
   NoteDownLane: {fileID: 4233062971094549248, guid: b4ca6c60149eeff409702ce6cbfc47f4, type: 3}
   notescroller: {fileID: 1874269173}
-  Pathtocsv: Assets/Csv/song.csv
+  Pathtocsv: Assets/Csv/sushi.csv
 --- !u!4 &5395330551371561297
 Transform:
   m_ObjectHideFlags: 0

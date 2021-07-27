@@ -44,7 +44,7 @@ public class NoteCharter : MonoBehaviour
         {
             NoteTime.Add(Timer, false);
             print("DownArrow at time: " + Timer.ToString("0.00"));
-            addToCsv(Timer.ToString("0.00"), "normal", "down", "Assets/Csv/song.csv");
+            addToCsv(Timer.ToString("0.00"), "normal", "down", "Assets/Csv/"+filename.text+".csv");
             GameObject p = Instantiate(DownLaneNote, DownLane.transform.position, Quaternion.identity);
             Destroy(p, 0.1f);
         }
