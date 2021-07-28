@@ -12,7 +12,7 @@ public class MenuController : MonoBehaviour
 
     public void Play() {
         Debug.Log("<color=yellow>Play</color>");
-        SceneManager.LoadScene("KenzieTest2");
+        SceneManager.LoadScene("SongSelection");
     }
 
     public void Update()
@@ -22,7 +22,7 @@ public class MenuController : MonoBehaviour
             Debug.Log("You pressed " + Input.inputString);
         }
     }
-    
+
     public void Credit()
     {
         Debug.Log("<color=yellow>Credits</color>");
