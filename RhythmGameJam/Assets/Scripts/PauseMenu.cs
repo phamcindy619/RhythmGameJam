@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine;
 
@@ -54,5 +55,10 @@ public class PauseMenu : MonoBehaviour
         PMenu.SetActive(false);
         StartCoroutine("CountDownStart");
         paused = false;
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }

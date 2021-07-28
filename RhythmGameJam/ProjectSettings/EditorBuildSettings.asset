@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LawfulCharter.unity
     guid: 0e6e410e61914754e85e70c69f49f4ca
+  - enabled: 1
+    path: Assets/Scenes/SushiMusic.unity
+    guid: c2e322ef62f5a304eb4560502ce083de
   m_configObjects: {}

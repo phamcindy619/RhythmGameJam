@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class SongSelector : MonoBehaviour {
@@ -15,15 +16,17 @@ public class SongSelector : MonoBehaviour {
         sm = GameObject.Find("SongManager").GetComponent<SongManager>();
     }
 
-    public void StartSong1()
+    public void StartSong1(string scenename)
     {
         sm.musicSource.clip = song1;
         sm.songBpm = bpm1;
+        SceneManager.LoadScene(scenename);
     }
 
-    public void StartSong2()
+    public void StartSong2(string scenename)
     {
         sm.musicSource.clip = song2;
         sm.songBpm = bpm2;
+        SceneManager.LoadScene(scenename);
     }
 }

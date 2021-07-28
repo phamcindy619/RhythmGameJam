@@ -180,13 +180,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1345040057}
         m_TargetAssemblyTypeName: SongSelector, Assembly-CSharp
         m_MethodName: StartSong2
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: SushiMusic
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &184226697
@@ -395,13 +395,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1345040057}
         m_TargetAssemblyTypeName: SongSelector, Assembly-CSharp
         m_MethodName: StartSong1
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Chicken Alfredo
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &725395749 stripped
@@ -640,7 +640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6191854439447952001, guid: c39df7dd01738664883d16df6ad038a7, type: 3}
       propertyPath: SongName
-      value: Example Name 2
+      value: Tempura Sushi
       objectReference: {fileID: 0}
     - target: {fileID: 6191854439447952015, guid: c39df7dd01738664883d16df6ad038a7, type: 3}
       propertyPath: m_Name
@@ -714,6 +714,10 @@ PrefabInstance:
     - target: {fileID: 6191854439447952000, guid: c39df7dd01738664883d16df6ad038a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6191854439447952001, guid: c39df7dd01738664883d16df6ad038a7, type: 3}
+      propertyPath: SongName
+      value: Chicken Alfredo
       objectReference: {fileID: 0}
     - target: {fileID: 6191854439447952015, guid: c39df7dd01738664883d16df6ad038a7, type: 3}
       propertyPath: m_Name
