@@ -19,6 +19,6 @@ public class SongSelector : MonoBehaviour {
     }
     
     public void ChooseSong() {
-        
+        Debug.Log("Chose a song");
     }
 }
