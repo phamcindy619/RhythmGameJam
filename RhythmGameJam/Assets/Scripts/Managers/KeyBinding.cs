@@ -13,6 +13,9 @@ public class KeyBinding : MonoBehaviour
     private GameObject currentKey;
     private Color32 normal = new Color32(99, 0, 93, 255);
     private Color32 pressed = new Color32(255, 0, 93, 240);
+
+    public static KeyBinding instance = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,18 @@ public class KeyBinding : MonoBehaviour
             DownKey.text = keys["DownKey"].ToString();
         }
 
+    }
+
+    void Awake() {
+        // Check if there is another KeyBinding
+        if (instance == null)
+            instance = this;
+        // Destroy any duplicate
+        else if (instance != this)
+            Destroy(gameObject);
+        
+        // Don't destroy KeyBinding when reloading the scene
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
