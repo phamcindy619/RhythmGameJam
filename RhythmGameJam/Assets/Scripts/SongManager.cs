@@ -40,7 +40,7 @@ public class SongManager : MonoBehaviour
         // Calculate song position
         if (!Paused)
         {
-            songPositionInSec = (float)(AudioSettings.dspTime - dspSongTime);
+            songPositionInSec = (float) (AudioSettings.dspTime - dspSongTime);
             songPositionInBeats = songPositionInSec / secPerBeat;
         }
         else

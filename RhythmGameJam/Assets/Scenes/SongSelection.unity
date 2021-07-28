@@ -556,8 +556,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4fd618676262b34c9be7aeab8c6c1bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Song1: Example Song1
-  Song2: Example Song2
+  song1: {fileID: 8300000, guid: 3cbc02ef8edf52241ad3b1ca71237ba9, type: 3}
+  bpm1: 129
+  song2: {fileID: 8300000, guid: 75158a262cd7f16499856948f1e897ac, type: 3}
+  bpm2: 155
+  sm: {fileID: 0}
 --- !u!4 &1345040058
 Transform:
   m_ObjectHideFlags: 0

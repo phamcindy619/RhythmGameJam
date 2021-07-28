@@ -3,16 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SongSelector : MonoBehaviour {
-    public string Song1;
-    public string Song2;
+    
+    public AudioClip song1;
+    public float bpm1;
+    public AudioClip song2;
+    public float bpm2;
+
+    public SongManager sm;
+
+    void Start() {
+        sm = GameObject.Find("SongManager").GetComponent<SongManager>();
+    }
 
     public void StartSong1()
     {
-        Debug.Log(Song1);
+        sm.musicSource.clip = song1;
+        sm.songBpm = bpm1;
     }
 
     public void StartSong2()
     {
-        Debug.Log(Song2);
+        sm.musicSource.clip = song2;
+        sm.songBpm = bpm2;
     }
 }
