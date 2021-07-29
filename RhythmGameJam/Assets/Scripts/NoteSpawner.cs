@@ -30,8 +30,20 @@ public class NoteSpawner : MonoBehaviour
     {
         if (ns.hasStarted) {
             if (nextIndex < notes.Length && notes[nextIndex] < sm.songPositionInBeats) {
-                GameObject n = Instantiate(NoteUplane, UpLane.transform.position, Quaternion.identity);
-                n.transform.parent = notescroller.transform;
+                //Generates a random number between 0 and 1-Lawful
+                float random = Random.Range(0f, 1f);
+                Debug.Log(random);
+                //If the random number is greater than .5 create a UpNote else create a DownNote-Lawful
+                if(random > .5)
+                {
+                    GameObject n = Instantiate(NoteUplane, UpLane.transform.position, Quaternion.identity);
+                    n.transform.parent = notescroller.transform;
+                }
+                else
+                {
+                    GameObject n = Instantiate(NoteDownLane, DownLane.transform.position, Quaternion.identity);
+                    n.transform.parent = notescroller.transform;
+                }
 
                 nextIndex++;
             }
