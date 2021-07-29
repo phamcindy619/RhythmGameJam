@@ -9,7 +9,7 @@ using System;
 public class NoteCharter : MonoBehaviour
 {
     public TextMeshProUGUI timertxt;
-    public float Timer;
+    public SongManager sm;
     public Dictionary<float, bool> NoteTime = new Dictionary<float, bool>();
     public TMP_InputField filename;
     [SerializeField]
@@ -24,27 +24,28 @@ public class NoteCharter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sm = GameObject.Find("SongManager").GetComponent<SongManager>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        Timer = GameObject.Find("SongManager").GetComponent<SongManager>().songPositionInSec;
-        timertxt.text = "Timer: " + Timer.ToString("0.00");
+        float Beat = Mathf.Round(sm.songPositionInBeats);
+        timertxt.text = "Beats: " + Beat;
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            NoteTime.Add(Timer, true);
-            print("UpArrow at time: " + Timer.ToString("0.00"));
-            addToCsv(Timer.ToString("0.00"), "normal", "up", "Assets/Csv/"+filename.text+".csv");
+            NoteTime.Add(Beat, true);
+            print("UpArrow at beat: " + Beat);
+            addToCsv(Beat.ToString(), "up", "Assets/Csv/"+filename.text+".csv");
             GameObject p = Instantiate(UpLaneNote, UpLane.transform.position, Quaternion.identity);
             Destroy(p, 0.1f);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            NoteTime.Add(Timer, false);
-            print("DownArrow at time: " + Timer.ToString("0.00"));
-            addToCsv(Timer.ToString("0.00"), "normal", "down", "Assets/Csv/"+filename.text+".csv");
+            NoteTime.Add(Beat, false);
+            print("DownArrow at beat: " + Beat);
+            addToCsv(Beat.ToString(), "down", "Assets/Csv/"+filename.text+".csv");
             GameObject p = Instantiate(DownLaneNote, DownLane.transform.position, Quaternion.identity);
             Destroy(p, 0.1f);
         }
@@ -55,13 +56,13 @@ public class NoteCharter : MonoBehaviour
     }
 
 
-    public static void addToCsv(string time, string type, string lane, string filepath)
+    public static void addToCsv(string beat,string lane, string filepath)
     {
         try
         {
             using (StreamWriter file = new StreamWriter(@filepath, true))
             {
-                file.WriteLine(time + "," + type + "," + lane);
+                file.WriteLine(beat + "," + lane);
             }
         }
         catch(Exception ex)
