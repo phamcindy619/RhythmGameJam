@@ -1788,6 +1788,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1874269175}
     - target: {fileID: 5395330552593412783, guid: ed10b8bbdcfe32d4b902e0f0ac091725, type: 3}
+      propertyPath: pathToCsv
+      value: Assets/Csv/Chicken_Alfredo02.csv
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395330552593412783, guid: ed10b8bbdcfe32d4b902e0f0ac091725, type: 3}
       propertyPath: notescroller
       value: 
       objectReference: {fileID: 1874269173}
