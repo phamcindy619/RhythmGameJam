@@ -44,6 +44,7 @@ public class SongSelector : MonoBehaviour {
         AudioClip song = Resources.Load<AudioClip>("Audio/" + name);
         SongManager.instance.musicSource.clip = song;
         SongManager.instance.songBpm = songList[name];
+        SongManager.instance.songName = name;
 
         // Switch to game scene
         SceneManager.LoadScene("Game");

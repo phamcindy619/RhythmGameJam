@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class SongManager : MonoBehaviour
 {
+    public string songName;
     public float songBpm;       // Beats per minute
     public float secPerBeat;    // Number of seconds per beat
     public float songPositionInSec;     // Current song position, in seconds
@@ -19,6 +20,7 @@ public class SongManager : MonoBehaviour
     void Start()
     {
         musicSource = GetComponent<AudioSource>();
+        Paused = true;
     }
 
     void Awake()

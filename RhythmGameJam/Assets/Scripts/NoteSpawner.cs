@@ -22,7 +22,7 @@ public class NoteSpawner : MonoBehaviour
     void Start()
     {
         notes = new List<Note>();
-        ReadCsvFile(pathToCsv + GameManager.instance.currSong + ".csv");
+        ReadCsvFile(pathToCsv + SongManager.instance.songName + ".csv");
     }
 
     void Update()
