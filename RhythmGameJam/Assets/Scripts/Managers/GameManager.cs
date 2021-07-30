@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public bool isPlaying;
+    public string currSong;
     public static GameManager instance = null;
 
     public int beatsShownInAdvance;
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
         fakeCombo = 1;
         currCombo = 1;
         beatsShownInAdvance = 3;
+        currSong = "";
     }
 
     void Awake() {

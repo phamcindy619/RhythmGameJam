@@ -9,7 +9,7 @@ public class NoteSpawner : MonoBehaviour
     public Transform DownLane;
     public GameObject NoteUpLane;
     public GameObject NoteDownLane;
-    public string pathToCsv = "Assets/Csv/Chicken_Alfredo02.csv";
+    private string pathToCsv = "Assets/Csv/";
 
     // Note spawner based on beat - Cindy
     public struct Note {
@@ -22,7 +22,7 @@ public class NoteSpawner : MonoBehaviour
     void Start()
     {
         notes = new List<Note>();
-        ReadCsvFile(pathToCsv);
+        ReadCsvFile(pathToCsv + GameManager.instance.currSong + ".csv");
     }
 
     void Update()
