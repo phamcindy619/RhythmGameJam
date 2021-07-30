@@ -11,11 +11,16 @@ public class Rating : MonoBehaviour
     public GameObject RateMenu;
     public int totalScore;
     public int Score;
-    public Sprite S, A, B, C, D, F;
+    private Sprite S, A, B, C, D, F;
 
     private void Start()
     {
- 
+        S = Resources.Load<Sprite>("Sprites/S");
+        A = Resources.Load<Sprite>("Sprites/A");
+        B = Resources.Load<Sprite>("Sprites/B");
+        C = Resources.Load<Sprite>("Sprites/C");
+        D = Resources.Load<Sprite>("Sprites/D");
+        F = Resources.Load<Sprite>("Sprites/F");
     }
 
     public void Update()

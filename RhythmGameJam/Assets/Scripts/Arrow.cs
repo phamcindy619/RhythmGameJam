@@ -30,7 +30,7 @@ public class Arrow : MonoBehaviour
         {
             if (canBePressed && !pressed)
             {
-                gameObject.SetActive(false);
+                Destroy(gameObject);
                 GameManager.instance.NoteHit();
                 
                 pressed = true;
