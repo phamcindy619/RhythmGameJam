@@ -41,7 +41,7 @@ public class Arrow : MonoBehaviour
         {
             if (canBePressed && !pressed)
             {
-                gameObject.SetActive(false);
+                Destroy(gameObject);
                 GameManager.instance.NoteHit();
                 
                 pressed = true;
@@ -77,7 +77,7 @@ public class Arrow : MonoBehaviour
             if (gameObject.activeInHierarchy)
             {
                 GameManager.instance.NoteMissed();
-                gameObject.SetActive(false);
+                Destroy(gameObject);
             }
         }
     }

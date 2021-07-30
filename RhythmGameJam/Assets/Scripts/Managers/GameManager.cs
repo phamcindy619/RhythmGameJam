@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     {
         fakeCombo = 1;
         currCombo = 1;
-        beatsShownInAdvance = 3;
+        beatsShownInAdvance = 5;
     }
 
     void Awake() {
