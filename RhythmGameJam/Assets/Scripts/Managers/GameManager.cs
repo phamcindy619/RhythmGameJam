@@ -22,11 +22,15 @@ public class GameManager : MonoBehaviour
     public Text textScore;
     public Text textHit;
     public Text textMiss;
-
+    //Fake Perfect
+    public int totalscore;
+    public int fakeCombo;
+    public int fakecombotracker;
 
     // Start is called before the first frame update
     void Start()
     {
+        fakeCombo = 1;
         currCombo = 1;
         beatsShownInAdvance = 3;
     }
@@ -83,6 +87,21 @@ public class GameManager : MonoBehaviour
         textScore.text = "Score: " + currentScore;
         textHit.enabled = true;
         textMiss.enabled = false;
+    }
+
+    public void FakePerfect()
+    {
+        if (fakeCombo - 1 < comboThresholds.Length)
+        {
+            fakecombotracker++;
+
+            if (comboThresholds[fakeCombo - 1] <= fakecombotracker)
+            {
+                fakecombotracker = 0;
+                fakeCombo++;
+            }
+        }
+        totalscore = totalscore + scorePerNote * fakeCombo;
     }
 
     public void NoteMissed() {

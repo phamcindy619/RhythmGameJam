@@ -32,6 +32,7 @@ public class Arrow : MonoBehaviour
             {
                 gameObject.SetActive(false);
                 GameManager.instance.NoteHit();
+                
                 pressed = true;
             }
         }
@@ -42,6 +43,7 @@ public class Arrow : MonoBehaviour
             {
                 gameObject.SetActive(false);
                 GameManager.instance.NoteHit();
+                
                 pressed = true;
             }
         }
@@ -61,6 +63,8 @@ public class Arrow : MonoBehaviour
         if (other.tag == "Activator")
         {
             canBePressed = true;
+            GameManager.instance.FakePerfect();
+        
         }
     }
 
