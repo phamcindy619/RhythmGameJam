@@ -667,9 +667,57 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2997386881950509710}
     - target: {fileID: 5124969824762857469, guid: 0060e753832ad7842b8d5fe34ee63c1b, type: 3}
+      propertyPath: currCombo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124969824762857469, guid: 0060e753832ad7842b8d5fe34ee63c1b, type: 3}
       propertyPath: textScore
       value: 
       objectReference: {fileID: 1354784524750732995}
+    - target: {fileID: 5124969824762857469, guid: 0060e753832ad7842b8d5fe34ee63c1b, type: 3}
+      propertyPath: comboThresholds.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124969824762857469, guid: 0060e753832ad7842b8d5fe34ee63c1b, type: 3}
+      propertyPath: comboThresholds.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124969824762857469, guid: 0060e753832ad7842b8d5fe34ee63c1b, type: 3}
+      propertyPath: comboThresholds.Array.data[1]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124969824762857469, guid: 0060e753832ad7842b8d5fe34ee63c1b, type: 3}
+      propertyPath: comboThresholds.Array.data[2]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124969824762857469, guid: 0060e753832ad7842b8d5fe34ee63c1b, type: 3}
+      propertyPath: comboThresholds.Array.data[3]
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124969824762857469, guid: 0060e753832ad7842b8d5fe34ee63c1b, type: 3}
+      propertyPath: comboThresholds.Array.data[4]
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124969824762857469, guid: 0060e753832ad7842b8d5fe34ee63c1b, type: 3}
+      propertyPath: comboThresholds.Array.data[5]
+      value: 96
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124969824762857469, guid: 0060e753832ad7842b8d5fe34ee63c1b, type: 3}
+      propertyPath: comboThresholds.Array.data[6]
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124969824762857469, guid: 0060e753832ad7842b8d5fe34ee63c1b, type: 3}
+      propertyPath: comboThresholds.Array.data[7]
+      value: 146
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124969824762857469, guid: 0060e753832ad7842b8d5fe34ee63c1b, type: 3}
+      propertyPath: comboThresholds.Array.data[8]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124969824762857469, guid: 0060e753832ad7842b8d5fe34ee63c1b, type: 3}
+      propertyPath: comboThresholds.Array.data[9]
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 5124969824762857470, guid: 0060e753832ad7842b8d5fe34ee63c1b, type: 3}
       propertyPath: m_Name
       value: GameManager

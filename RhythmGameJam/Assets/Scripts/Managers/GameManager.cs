@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     // Scoreboard
     public int currCombo;
     public Text comboText;
+    public int comboTracker;
+    public int[] comboThresholds;
 
     public int currentScore;
     public int scorePerNote = 10;
@@ -20,10 +22,12 @@ public class GameManager : MonoBehaviour
     public Text textHit;
     public Text textMiss;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        currCombo = 1;
+
     }
 
     void Awake() {
@@ -58,10 +62,22 @@ public class GameManager : MonoBehaviour
     public void NoteHit() {
         Debug.Log("note hit");
 
-        currCombo++;
+
+        if(currCombo - 1 < comboThresholds.Length)
+        {
+            comboTracker++;
+
+            if (comboThresholds[currCombo - 1] <= comboTracker)
+            {
+                comboTracker = 0;
+                currCombo++;
+
+            }
+        }
+
         comboText.text = "Combo: " + currCombo;
 
-        currentScore = currentScore + scorePerNote;
+        currentScore = currentScore + scorePerNote * currCombo;
         Debug.Log(currentScore);
 
         textScore.text = "Score: " + currentScore;
@@ -75,7 +91,8 @@ public class GameManager : MonoBehaviour
         textHit.enabled = false;
         textMiss.enabled = true;
 
-        currCombo = 0;
-        comboText.text = "Combo: 0";
+        currCombo = 1;
+        comboTracker = 0;
+        comboText.text = "Combo: " + currCombo;
     }
 }
