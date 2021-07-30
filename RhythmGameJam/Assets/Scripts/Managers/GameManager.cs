@@ -91,16 +91,6 @@ public class GameManager : MonoBehaviour
 
     public void FakePerfect()
     {
-        if (fakeCombo - 1 < comboThresholds.Length)
-        {
-            fakecombotracker++;
-
-            if (comboThresholds[fakeCombo - 1] <= fakecombotracker)
-            {
-                fakecombotracker = 0;
-                fakeCombo++;
-            }
-        }
         totalscore = totalscore + scorePerNote;
     }
 

@@ -22,7 +22,7 @@ public class Rating : MonoBehaviour
     {
         totalScore = GameManager.instance.totalscore;
         Score = GameManager.instance.currentScore;
-        if (GameManager.instance.isPlaying && SongManager.instance.musicSource.clip.length <= SongManager.instance.songPositionInSec)
+        if (SongManager.instance.musicSource.clip.length <= SongManager.instance.songPositionInSec)
         {
             RateScore(totalScore,Score);
             ActiveUI.SetActive(false);
