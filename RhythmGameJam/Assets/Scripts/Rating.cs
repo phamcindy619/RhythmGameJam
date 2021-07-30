@@ -11,9 +11,20 @@ public class Rating : MonoBehaviour
 
     private void Start()
     {
-        RateScore(Score, totalScore);
+       
     }
 
+    public void Update()
+    {
+        if (GameManager.instance.isPlaying && SongManager.instance.musicSource.clip.length <= SongManager.instance.songPositionInSec)
+        {
+            Debug.Log("File ended");
+
+        }
+        else
+        {
+        }
+    }
     void RateScore(int score,int totalScore)
     {
         //Get the sixth of the totalscore
