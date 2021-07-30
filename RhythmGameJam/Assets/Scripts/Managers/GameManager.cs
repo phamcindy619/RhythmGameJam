@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
                 fakeCombo++;
             }
         }
-        totalscore = totalscore + scorePerNote * fakeCombo;
+        totalscore = totalscore + scorePerNote;
     }
 
     public void NoteMissed() {
