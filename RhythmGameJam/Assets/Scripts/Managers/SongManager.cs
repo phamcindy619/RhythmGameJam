@@ -19,6 +19,7 @@ public class SongManager : MonoBehaviour
     void Start()
     {
         musicSource = GetComponent<AudioSource>();
+        Paused = true;
     }
 
     void Awake()
