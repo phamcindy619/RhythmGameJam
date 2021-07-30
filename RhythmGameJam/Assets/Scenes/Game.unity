@@ -840,10 +840,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActiveUI: {fileID: 976608667}
-  rateimage: {fileID: 1039716072}
+  rateImage: {fileID: 1039716072}
   RateMenu: {fileID: 1465999373}
   totalScore: 0
   Score: 0
+  S: {fileID: 0}
+  A: {fileID: 0}
+  B: {fileID: 0}
+  C: {fileID: 0}
+  D: {fileID: 0}
+  F: {fileID: 0}
 --- !u!4 &761583034
 Transform:
   m_ObjectHideFlags: 0
