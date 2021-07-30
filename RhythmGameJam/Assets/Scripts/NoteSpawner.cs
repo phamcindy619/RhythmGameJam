@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class NoteSpawner : MonoBehaviour
 {
-    [SerializeField]
-    private NoteScroller ns;
     public Transform UpLane;
     public Transform DownLane;
     public GameObject NoteUpLane;
@@ -14,7 +12,6 @@ public class NoteSpawner : MonoBehaviour
     public string pathToCsv = "Assets/Csv/Chicken_Alfredo02.csv";
 
     // Note spawner based on beat - Cindy
-    public SongManager sm;
     public struct Note {
         public float beat;
         public bool upLane;
@@ -24,24 +21,23 @@ public class NoteSpawner : MonoBehaviour
 
     void Start()
     {
-        sm = GameObject.Find("SongManager").GetComponent<SongManager>();
         notes = new List<Note>();
         ReadCsvFile(pathToCsv);
     }
 
     void Update()
     {
-        if (ns.hasStarted) {
-            if (nextIndex < notes.Count && notes[nextIndex].beat < sm.songPositionInBeats) {
+        if (GameManager.instance.isPlaying) {
+            if (nextIndex < notes.Count && notes[nextIndex].beat < SongManager.instance.songPositionInBeats + GameManager.instance.beatsShownInAdvance) {
                 if(notes[nextIndex].upLane)
                 {
-                    GameObject n = Instantiate(NoteUpLane, UpLane.transform.position, Quaternion.identity);
-                    n.transform.parent = ns.gameObject.transform;
+                    GameObject note = Instantiate(NoteUpLane, UpLane.transform.position, Quaternion.identity);
+                    note.GetComponent<Arrow>().currBeat = notes[nextIndex].beat;
                 }
                 else
                 {
-                    GameObject n = Instantiate(NoteDownLane, DownLane.transform.position, Quaternion.identity);
-                    n.transform.parent = ns.gameObject.transform;
+                    GameObject note = Instantiate(NoteDownLane, DownLane.transform.position, Quaternion.identity);
+                    note.GetComponent<Arrow>().currBeat = notes[nextIndex].beat;
                 }
                 nextIndex++;
             }

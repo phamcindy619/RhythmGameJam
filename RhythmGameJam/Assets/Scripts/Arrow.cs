@@ -9,11 +9,17 @@ public class Arrow : MonoBehaviour
     public bool Uplane;
     [SerializeField]
     private KeyBinding keybinds;
+    private Vector2 startPos;
+    private Vector2 endPos;
+
+    public float currBeat;
 
     // Start is called before the first frame update
     void Start()
     {
         keybinds = GameObject.Find("KeyBindManager").GetComponent<KeyBinding>();
+        startPos = transform.position;
+        endPos = GameObject.Find("NoteEnd").transform.position;
     }
 
     // Update is called once per frame
@@ -39,6 +45,15 @@ public class Arrow : MonoBehaviour
                 pressed = true;
             }
         }
+
+        transform.position = new Vector2(
+            Mathf.Lerp(
+                startPos.x,
+                endPos.x,
+                (GameManager.instance.beatsShownInAdvance - (currBeat - SongManager.instance.songPositionInBeats)) / GameManager.instance.beatsShownInAdvance
+            ),
+            transform.position.y
+        );
     }
 
     private void OnTriggerEnter2D(Collider2D other)

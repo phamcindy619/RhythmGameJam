@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public bool isPlaying;
-    public NoteScroller note;
     public static GameManager instance = null;
+
+    public int beatsShownInAdvance;
 
     // Scoreboard
     public int currCombo;
@@ -27,7 +28,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currCombo = 1;
-
+        beatsShownInAdvance = 3;
     }
 
     void Awake() {
@@ -53,7 +54,6 @@ public class GameManager : MonoBehaviour
         if (!isPlaying) {
             if (Input.anyKeyDown) {
                 isPlaying = true;
-                note.hasStarted = true;
                 SongManager.instance.PlayMusic();
             }
         }
