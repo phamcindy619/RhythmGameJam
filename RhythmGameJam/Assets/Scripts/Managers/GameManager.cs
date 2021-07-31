@@ -26,10 +26,15 @@ public class GameManager : MonoBehaviour
     public int totalscore;
     public int fakeCombo;
     public int fakecombotracker;
-
+    //Sections
+    public int section = 1;
+    public int totalscore1 = 4790;
+    int multiply;
+    int eigth; 
     // Start is called before the first frame update
     void Start()
     {
+        eigth = totalscore1/8;
         fakeCombo = 1;
         currCombo = 1;
         beatsShownInAdvance = 5;
@@ -55,6 +60,40 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currentScore == eigth * 8)
+        {
+            section += 1;
+        }
+        else if (currentScore == eigth * 7)
+        {
+            section += 1;
+        }
+        else if (currentScore == eigth * 6)
+        {
+            section += 1;
+
+        }
+        else if (currentScore == eigth * 5)
+        {
+            section += 1;
+
+        }
+        else if (currentScore == eigth * 4)
+        {
+            section += 1;
+
+        }
+        else if(currentScore == eigth * 3)
+        {
+            section += 1;
+
+        }
+        else if(currentScore == eigth * 2)
+        {
+            section += 1;
+
+        }
+
         if (!isPlaying) {
             if (Input.anyKeyDown) {
                 isPlaying = true;
