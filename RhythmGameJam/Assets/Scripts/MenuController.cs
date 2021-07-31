@@ -56,7 +56,6 @@ public class MenuController : MonoBehaviour
     {
         Debug.Log("<color=yellow>Quit</color>");
         buttonaudiosource.PlayOneShot(confirmation);
-
         Application.Quit();
     }
 
