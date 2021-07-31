@@ -21,6 +21,7 @@ public class PauseMenu : MonoBehaviour
 
     IEnumerator CountDownStart()
     {
+        GameManager.instance.isPlaying = false;
         CountdownObject.SetActive(true);
         while(countdowntime > 0)
         {

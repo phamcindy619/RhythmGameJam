@@ -39,7 +39,7 @@ public class SongSelector : MonoBehaviour {
             // Add button listener
             newSong.GetComponent<Button>().onClick.AddListener(() => ChooseSong(item.Key));
 
-            startPos += new Vector3(0, -150, 0);
+            startPos += new Vector3(0, -300, 0);
         }
     }
     
