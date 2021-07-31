@@ -1110,7 +1110,7 @@ GameObject:
   - component: {fileID: 794087268}
   - component: {fileID: 794087267}
   m_Layer: 5
-  m_Name: UpKey Button
+  m_Name: UpKey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1865,7 +1865,7 @@ GameObject:
   - component: {fileID: 1594897518}
   - component: {fileID: 1594897517}
   m_Layer: 5
-  m_Name: DownKey Button
+  m_Name: DownKey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
