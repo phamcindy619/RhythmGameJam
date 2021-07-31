@@ -30,6 +30,11 @@ public class GameManager : MonoBehaviour
     {
         //currCombo = 1;
         beatsShownInAdvance = 5;
+        if (!isPlaying)
+        {
+            isPlaying = true;
+            SongManager.instance.PlayMusic();
+        }
     }
 
     void Awake() {
@@ -52,10 +57,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isPlaying) {
-            isPlaying = true;
-            SongManager.instance.PlayMusic();
-        }
+
     }
 
     public void NoteHit() {

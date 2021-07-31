@@ -418,7 +418,7 @@ PrefabInstance:
     - target: {fileID: 3720245396528620732, guid: b54e2986f7d0e8a4e8cc3bde8c92a7cd, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: c2c684aaee9971841ac9616c475b6dab, type: 3}
+      objectReference: {fileID: 8300000, guid: 13e37d31acf702f489598e44747be680, type: 3}
     - target: {fileID: 3720245396528620732, guid: b54e2986f7d0e8a4e8cc3bde8c92a7cd, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
@@ -1423,6 +1423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpKey: {fileID: 0}
   DownKey: {fileID: 0}
+  currentKey: {fileID: 0}
 --- !u!4 &1753170286
 Transform:
   m_ObjectHideFlags: 0

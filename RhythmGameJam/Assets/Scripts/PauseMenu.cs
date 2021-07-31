@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject CountdownObject;
     public Text countdownDisplay;
     public int countdowntime;
+    public float timepassedinpause;
     [SerializeField]
     GameObject PMenu;
     [SerializeField]
@@ -21,7 +22,6 @@ public class PauseMenu : MonoBehaviour
 
     IEnumerator CountDownStart()
     {
-        GameManager.instance.isPlaying = false;
         CountdownObject.SetActive(true);
         while(countdowntime > 0)
         {
@@ -34,6 +34,8 @@ public class PauseMenu : MonoBehaviour
         yield return new WaitForSecondsRealtime(.5f);
         CountdownObject.SetActive(false);
         Time.timeScale = 1;
+        GameManager.instance.isPlaying = true;
+        SongManager.instance.ResumeMusic();
     }
 
     // Update is called once per frame
@@ -43,9 +45,17 @@ public class PauseMenu : MonoBehaviour
         {
             StopCoroutine("CountDownStart");
             Time.timeScale = 0;
+            GameManager.instance.isPlaying = false;
+            SongManager.instance.PauseMusic();
             paused = true;
             PMenu.SetActive(true);
             countdowntime = 3;
+            
+        }
+
+        if (paused)
+        {
+            timepassedinpause = (float)AudioSettings.dspTime - SongManager.instance.dspSongTime;
         }
     }
 

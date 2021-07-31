@@ -14,11 +14,13 @@ public class SongManager : MonoBehaviour
     public float dspSongTime;   // How many seconds have passed since song started
     public AudioSource musicSource;
     public static SongManager instance = null;  // Singleton SongManager
-
+    [SerializeField]
+    PauseMenu pm;
     bool Paused;
     // Start is called before the first frame update
     void Start()
     {
+
         musicSource = GetComponent<AudioSource>();
         Paused = true;
     }
@@ -39,6 +41,10 @@ public class SongManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameObject.Find("Canvas").GetComponent<PauseMenu>() != null)
+        {
+            pm = GameObject.Find("Canvas").GetComponent<PauseMenu>();
+        }
         // Calculate song position
         if (!Paused)
         {
@@ -66,6 +72,15 @@ public class SongManager : MonoBehaviour
     {
         Paused = true;
         musicSource.Pause();
+    }
+
+    public void ResumeMusic()
+    {
+        Paused = false;
+        secPerBeat = 60f / songBpm;
+        // Record when music starts
+        dspSongTime = (float)AudioSettings.dspTime-pm.timepassedinpause;
+        musicSource.UnPause();
     }
 
 }
