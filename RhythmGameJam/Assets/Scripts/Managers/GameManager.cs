@@ -95,10 +95,8 @@ public class GameManager : MonoBehaviour
         }
 
         if (!isPlaying) {
-            if (Input.anyKeyDown) {
-                isPlaying = true;
-                SongManager.instance.PlayMusic();
-            }
+            isPlaying = true;
+            SongManager.instance.PlayMusic();
         }
     }
 
