@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsMenu: {fileID: 108525291}
-  remapping: 0
+  remapping: 1
 --- !u!1 &108525291
 GameObject:
   m_ObjectHideFlags: 0
@@ -2671,10 +2671,10 @@ PrefabInstance:
     - target: {fileID: 4493527783113725423, guid: 501ea6f7c1ea8274d8e4e1164d4b4380, type: 3}
       propertyPath: UpKey
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 905408194}
     - target: {fileID: 4493527783113725423, guid: 501ea6f7c1ea8274d8e4e1164d4b4380, type: 3}
       propertyPath: DownKey
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1684054919}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 501ea6f7c1ea8274d8e4e1164d4b4380, type: 3}
