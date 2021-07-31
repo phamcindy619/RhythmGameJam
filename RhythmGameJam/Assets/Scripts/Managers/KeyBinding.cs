@@ -7,8 +7,8 @@ public class KeyBinding : MonoBehaviour
 {
 
     public Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
-    public TextMeshProUGUI UpKey;
-    public TextMeshProUGUI DownKey;
+    public Text UpKey;
+    public Text DownKey;
 
     private GameObject currentKey;
     private Color32 normal = new Color32(99, 0, 93, 255);
@@ -56,7 +56,7 @@ public class KeyBinding : MonoBehaviour
             if (e.isKey)
             {
                 keys[currentKey.name] = e.keyCode;
-                currentKey.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = e.keyCode.ToString();
+                currentKey.transform.GetChild(0).GetComponent<Text>().text = e.keyCode.ToString();
                 currentKey.GetComponent<Image>().color = normal;
                 currentKey = null;
             }
