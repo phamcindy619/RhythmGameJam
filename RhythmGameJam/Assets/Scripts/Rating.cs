@@ -37,7 +37,7 @@ public class Rating : MonoBehaviour
         if (SongManager.instance.musicSource.clip.length <= SongManager.instance.songPositionInSec)
         {
             foodImage.sprite = Resources.Load<Sprite>("Sprites/" + SongManager.instance.songName);
-            RateScore(totalScore, Score);
+            RateScore(Score, totalScore);
             ActiveUI.SetActive(false);
             RateMenu.SetActive(true);
             animator.enabled = false;
