@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public Text textMiss;
     //Fake Perfect
     public int totalscore;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,9 +59,6 @@ public class GameManager : MonoBehaviour
     }
 
     public void NoteHit() {
-        Debug.Log("note hit");
-
-
         if(currCombo - 1 < comboThresholds.Length)
         {
             comboTracker++;
@@ -77,7 +74,6 @@ public class GameManager : MonoBehaviour
         comboText.text = "Combo: " + currCombo;
 
         currentScore += scorePerNote * currCombo;
-        Debug.Log(currentScore);
 
         textScore.text = "Score: " + currentScore;
         textHit.enabled = true;
@@ -90,8 +86,6 @@ public class GameManager : MonoBehaviour
     }
 
     public void NoteMissed() {
-        Debug.Log("note missed");
-
         textHit.enabled = false;
         textMiss.enabled = true;
 
