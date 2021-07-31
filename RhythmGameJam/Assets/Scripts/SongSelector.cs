@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System;
-using TMPro;
 using UnityEngine.UI;
 
 public class SongSelector : MonoBehaviour {
     private Dictionary<string, float> songList;      // Key: Song name, Value: BPM
     public GameObject song;
+    public GameObject start;
 
     void Start() {
-        Vector3 startPos = new Vector3(0, 0, 0);
         GameObject songMenu = GameObject.Find("Song Menu");
+        start = GameObject.Find("Start");
+        Vector3 startPos = start.transform.localPosition;
 
         // Initialize song list
         songList = new Dictionary<string, float>
@@ -25,12 +26,15 @@ public class SongSelector : MonoBehaviour {
         foreach (var item in songList) {
             // Instantiate song object
             GameObject newSong = Instantiate(song) as GameObject;
-            newSong.transform.parent = songMenu.transform;
+            newSong.transform.SetParent(songMenu.transform);
             newSong.transform.localPosition = startPos;
 
             // Update song info
-            TextMeshProUGUI songText = newSong.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
+            Text songText = newSong.transform.GetChild(1).gameObject.GetComponent<Text>();
             songText.text = item.Key;
+
+            Image dishImage = newSong.transform.GetChild(2).gameObject.GetComponent<Image>();
+            dishImage.sprite = Resources.Load<Sprite>("Sprites/" + item.Key);
 
             // Add button listener
             newSong.GetComponent<Button>().onClick.AddListener(() => ChooseSong(item.Key));
