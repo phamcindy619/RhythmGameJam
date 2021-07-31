@@ -8,10 +8,13 @@ public class Rating : MonoBehaviour
     //Getting the total score(with the combo affecting included), the score of the player, and the Sprites of the Grades
     public GameObject ActiveUI;
     public Image rateImage;
+    public Image ghostImage;
+    public Image foodImage;
     public GameObject RateMenu;
     public int totalScore;
     public int Score;
-    public Sprite S, A, B, C, D, F;
+    private Sprite S, A, B, C, D, F;
+    private Sprite ghostWin, ghostLose;
 
     private void Start()
     {
@@ -21,6 +24,9 @@ public class Rating : MonoBehaviour
         C = Resources.Load<Sprite>("Sprites/C");
         D = Resources.Load<Sprite>("Sprites/D");
         F = Resources.Load<Sprite>("Sprites/F");
+
+        ghostWin = Resources.Load<Sprite>("Sprites/ghostWin");
+        ghostLose = Resources.Load<Sprite>("Sprites/ghostLose");
     }
 
     public void Update()
@@ -29,6 +35,7 @@ public class Rating : MonoBehaviour
         Score = GameManager.instance.currentScore;
         if (SongManager.instance.musicSource.clip.length <= SongManager.instance.songPositionInSec)
         {
+            foodImage.sprite = Resources.Load<Sprite>("Sprites/" + SongManager.instance.songName);
             RateScore(totalScore,Score);
             ActiveUI.SetActive(false);
             RateMenu.SetActive(true);
@@ -44,27 +51,27 @@ public class Rating : MonoBehaviour
 
         if (score > sixth * 6) {
             rateImage.sprite = S;
-            Debug.Log("S score!");
+            ghostImage.sprite = ghostWin;
         }
         else if (score > sixth * 5) {
             rateImage.sprite = A;
-            Debug.Log("A score!");
+            ghostImage.sprite = ghostWin;
         }
         else if (score > sixth * 4) {
             rateImage.sprite = B;
-            Debug.Log("B score!");
+            ghostImage.sprite = ghostWin;
         }
         else if (score > sixth * 3) {
             rateImage.sprite = C;
-            Debug.Log("C score!");
+            ghostImage.sprite = ghostWin;
         }
         else if (score > sixth * 2) {
             rateImage.sprite = D;
-            Debug.Log("D score!");
+            ghostImage.sprite = ghostLose;
         }
         else {
             rateImage.sprite = F;
-            Debug.Log("F score!");
+            ghostImage.sprite = ghostLose;
         }
     }
 }
