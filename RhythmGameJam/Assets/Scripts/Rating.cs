@@ -14,6 +14,7 @@ public class Rating : MonoBehaviour
     public Animator animator;
     public int totalScore;
     public int Score;
+    [SerializeField]
     private Sprite S, A, B, C, D, F;
     private Sprite ghostWin, ghostLose;
 
@@ -43,10 +44,11 @@ public class Rating : MonoBehaviour
             animator.enabled = false;
         }
     }
-    void RateScore(int score,int totalScore)
+    void RateScore(float score,float totalScore)
     {
         Debug.Log("score: " + score);
         Debug.Log("total score: " + totalScore);
+        Debug.Log("division:" + score / totalScore);
         if (score / totalScore >= .95) {
             rateImage.sprite = S;
             ghostImage.sprite = ghostWin;
