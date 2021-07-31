@@ -1,13 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject CountdownObject;
-    public TextMeshProUGUI countdownDisplay;
+    public Text countdownDisplay;
     public int countdowntime;
     [SerializeField]
     GameObject PMenu;

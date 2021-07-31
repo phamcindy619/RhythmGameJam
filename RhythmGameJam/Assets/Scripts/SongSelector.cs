@@ -26,7 +26,7 @@ public class SongSelector : MonoBehaviour {
         foreach (var item in songList) {
             // Instantiate song object
             GameObject newSong = Instantiate(song) as GameObject;
-            newSong.transform.SetParent(songMenu.transform);
+            newSong.transform.parent = songMenu.transform;
             newSong.transform.localPosition = startPos;
 
             // Update song info

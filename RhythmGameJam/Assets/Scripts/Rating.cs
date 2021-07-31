@@ -11,6 +11,7 @@ public class Rating : MonoBehaviour
     public Image ghostImage;
     public Image foodImage;
     public GameObject RateMenu;
+    public Animator animator;
     public int totalScore;
     public int Score;
     private Sprite S, A, B, C, D, F;
@@ -39,33 +40,30 @@ public class Rating : MonoBehaviour
             RateScore(totalScore, Score);
             ActiveUI.SetActive(false);
             RateMenu.SetActive(true);
-        }
-        else
-        {
+            animator.enabled = false;
         }
     }
     void RateScore(int score,int totalScore)
     {
-        //Get the sixth of the totalscore
-        int sixth = totalScore / 6;
-
-        if (score > sixth * 6) {
+        Debug.Log("score: " + score);
+        Debug.Log("total score: " + totalScore);
+        if (score / totalScore >= .95) {
             rateImage.sprite = S;
             ghostImage.sprite = ghostWin;
         }
-        else if (score > sixth * 5) {
+        else if (score / totalScore >= .9) {
             rateImage.sprite = A;
             ghostImage.sprite = ghostWin;
         }
-        else if (score > sixth * 4) {
+        else if (score / totalScore >= .8) {
             rateImage.sprite = B;
             ghostImage.sprite = ghostWin;
         }
-        else if (score > sixth * 3) {
+        else if (score / totalScore >= .7) {
             rateImage.sprite = C;
             ghostImage.sprite = ghostWin;
         }
-        else if (score > sixth * 2) {
+        else if (score / totalScore >= .6) {
             rateImage.sprite = D;
             ghostImage.sprite = ghostLose;
         }
