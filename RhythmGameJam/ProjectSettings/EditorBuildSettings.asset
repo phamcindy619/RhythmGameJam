@@ -11,12 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SongSelection.unity
     guid: 8214bf9d4816c5c4cbfbbbd1bfc24372
-  - enabled: 0
-    path: Assets/Scenes/Testing/KenzieTest2.unity
-    guid: 518ee1269f0394dedb0e98374ccea5ec
-  - enabled: 0
-    path: Assets/Scenes/Testing/LawfulCharter.unity
-    guid: 0e6e410e61914754e85e70c69f49f4ca
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: c2e322ef62f5a304eb4560502ce083de

@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 public class KeyBinding : MonoBehaviour
 {
-
+    public GameObject settingsMenu;
+    public AudioClip confirmation;
     public Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
     public Text UpKey;
     public Text DownKey;
@@ -18,15 +18,16 @@ public class KeyBinding : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        keys.Add("UpKey",(KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("UpKey", "Z")));
-        keys.Add("DownKey", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("DownKey", "X")));
+        confirmation = Resources.Load<AudioClip>("Audio/Menu_Confirm");
+
+        keys.Add("UpKey",(KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("UpKey", "F")));
+        keys.Add("DownKey", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("DownKey", "J")));
 
         if(UpKey != null)
         {
             UpKey.text = keys["UpKey"].ToString();
             DownKey.text = keys["DownKey"].ToString();
         }
-
     }
 
     void Awake() {
@@ -39,12 +40,6 @@ public class KeyBinding : MonoBehaviour
         
         // Don't destroy KeyBinding when reloading the scene
         DontDestroyOnLoad(gameObject);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnGUI()
@@ -80,5 +75,8 @@ public class KeyBinding : MonoBehaviour
             Debug.Log("UpKeys: " + PlayerPrefs.GetString("UpKey") + "Down Keys:" + PlayerPrefs.GetString("DownKey"));
         }
         PlayerPrefs.Save();
+
+        settingsMenu.SetActive(false);
+        SongManager.instance.PlaySingle(confirmation);
     }
 }

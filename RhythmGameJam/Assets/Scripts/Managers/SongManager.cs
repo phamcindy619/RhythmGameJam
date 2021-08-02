@@ -13,6 +13,7 @@ public class SongManager : MonoBehaviour
     public float songPositionInBeats;   // Current song position, in beats
     public float dspSongTime;   // How many seconds have passed since song started
     public AudioSource musicSource;
+    public AudioSource efxSource;
     public static SongManager instance = null;  // Singleton SongManager
     [SerializeField]
     PauseMenu pm;
@@ -20,9 +21,9 @@ public class SongManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        musicSource = GetComponent<AudioSource>();
         Paused = true;
+        musicSource.clip = Resources.Load<AudioClip>("Audio/Main Menu Theme");
+        musicSource.Play();
     }
 
     void Awake()
@@ -81,6 +82,13 @@ public class SongManager : MonoBehaviour
         // Record when music starts
         dspSongTime = (float)AudioSettings.dspTime-pm.timepassedinpause;
         musicSource.UnPause();
+    }
+
+    // Play single sound effect clip
+    public void PlaySingle(AudioClip clip)
+    {
+        efxSource.clip = clip;
+        efxSource.Play();
     }
 
 }
