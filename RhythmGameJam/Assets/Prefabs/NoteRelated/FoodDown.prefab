@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3128002373227580542}
   - component: {fileID: 8196978790097337886}
   m_Layer: 0
-  m_Name: Purple Food
+  m_Name: FoodDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

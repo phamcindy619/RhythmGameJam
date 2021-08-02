@@ -758,6 +758,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4894396638686364862}
     - target: {fileID: 5124969824762857469, guid: 0060e753832ad7842b8d5fe34ee63c1b, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1457117716}
+    - target: {fileID: 5124969824762857469, guid: 0060e753832ad7842b8d5fe34ee63c1b, type: 3}
       propertyPath: textMiss
       value: 
       objectReference: {fileID: 1320305384387959522}

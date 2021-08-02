@@ -8,7 +8,7 @@ public class MenuController : MonoBehaviour
     public GameObject settingsMenu;
     public AudioClip confirmation;
 
-    public void Start()
+    void Start()
     {
         confirmation = Resources.Load<AudioClip>("Audio/Menu_Confirm");
     }

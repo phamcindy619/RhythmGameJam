@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
 {
     public bool isPlaying;
     public static GameManager instance = null;
-
     public int beatsShownInAdvance;
 
     // Scoreboard
@@ -30,11 +29,6 @@ public class GameManager : MonoBehaviour
     {
         //currCombo = 1;
         beatsShownInAdvance = 5;
-        if (!isPlaying)
-        {
-            isPlaying = true;
-            SongManager.instance.PlayMusic();
-        }
     }
 
     void Awake() {
@@ -52,6 +46,12 @@ public class GameManager : MonoBehaviour
         textMiss.enabled = false;
 
         //comboText.text = "Combo: 0";
+
+        if (!isPlaying)
+        {
+            isPlaying = true;
+            SongManager.instance.PlayMusic();
+        }
     }
 
     // Update is called once per frame

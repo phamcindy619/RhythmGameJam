@@ -10,7 +10,11 @@ public class SongSelector : MonoBehaviour {
     public GameObject song;
     public GameObject start;
 
+    public AudioClip confirmation;
+
     void Start() {
+        confirmation = Resources.Load<AudioClip>("Audio/Menu_Confirm");
+
         GameObject songMenu = GameObject.Find("Song Menu");
         start = GameObject.Find("Start");
         Vector3 startPos = start.transform.localPosition;
@@ -44,6 +48,8 @@ public class SongSelector : MonoBehaviour {
     }
     
     public void ChooseSong(string name) {
+        SongManager.instance.PlaySingle(confirmation);
+
         // Load in the correct song
         AudioClip song = Resources.Load<AudioClip>("Audio/" + name);
         SongManager.instance.musicSource.clip = song;

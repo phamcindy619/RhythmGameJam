@@ -9,7 +9,6 @@ public class NoteSpawner : MonoBehaviour
     public Transform DownLane;
     public GameObject NoteUpLane;
     public GameObject NoteDownLane;
-    private string pathToCsv = "Assets/Csv/";
 
     // Note spawner based on beat - Cindy
     public struct Note {
@@ -22,7 +21,8 @@ public class NoteSpawner : MonoBehaviour
     void Start()
     {
         notes = new List<Note>();
-        ReadCsvFile(pathToCsv + SongManager.instance.songName + ".csv");
+        TextAsset chart = Resources.Load<TextAsset>("CSV/" + SongManager.instance.songName);
+        ReadFile(chart);
     }
 
     void Update()
@@ -44,26 +44,20 @@ public class NoteSpawner : MonoBehaviour
         }
     }
 
-    void ReadCsvFile(string filepath)
+    void ReadFile(TextAsset textObj)
     {
-        StreamReader strReader = new StreamReader(filepath);
-        bool endoffile = false;
-        while (!endoffile)
-        {
-            string data_string = strReader.ReadLine();
-            if(data_string == null)
-            {
-                endoffile = true;
-                break;
+        string[] data_string = textObj.text.Split('\n');
+        foreach (string line in data_string) {
+            if (line != "") {
+                string[] data_values = line.Split(',');
+
+                Note newNote = new Note {
+                    beat = float.Parse(data_values[0]),
+                    upLane = data_values[1] == "up"? true : false
+                };
+
+                notes.Add(newNote);
             }
-            string[] data_values = data_string.Split(',');
-
-            Note newNote = new Note {
-                beat = float.Parse(data_values[0]),
-                upLane = data_values[1] == "up"? true : false
-            };
-
-            notes.Add(newNote);
         }
     }
 }

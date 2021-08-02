@@ -61,7 +61,6 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-
         PMenu.SetActive(false);
         StartCoroutine("CountDownStart");
         paused = false;
@@ -70,5 +69,10 @@ public class PauseMenu : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("Menu");
+        paused = false;
+        Time.timeScale = 1;
+        GameManager.instance.isPlaying = true;
+        SongManager.instance.musicSource.clip = Resources.Load<AudioClip>("Audio/Main Menu Theme");
+        SongManager.instance.musicSource.Play();
     }
 }
